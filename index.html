@@ -302,7 +302,7 @@
             botMessage.style.color = "#fff";
             botMessage.style.background = "#854fff";
             botMessage.style.marginTop = "10px";
-            chatBody.appendChild(botMessage);
+            chatBody.appendChild(botMessage.replace("\n", "<br />"));
         })
         .catch(error => console.error("Error:", error));
 
