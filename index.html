@@ -299,10 +299,11 @@
         .then(data => {
             let botMessage = document.createElement("p");
             botMessage.innerHTML = data.output || "Sorry, I couldn't understand that.";
+            botMessage.innerHTML.replace("\n", "<br />");
             botMessage.style.color = "#fff";
             botMessage.style.background = "#854fff";
             botMessage.style.marginTop = "10px";
-            chatBody.appendChild(botMessage.replace("\n", "<br />"));
+            chatBody.appendChild(botMessage);
         })
         .catch(error => console.error("Error:", error));
 
