@@ -251,10 +251,10 @@
 
     // Function to generate or retrieve a unique chat ID
     function getChatId() {
-        let chatId = sessionStorage.getItem("chatId");
+        let chatId = sessionStorage.getItem("sessionId");
         if (!chatId) {
             chatId = "chat_" + Math.random().toString(36).substr(2, 9); // Unique ID
-            sessionStorage.setItem("chatId", chatId);
+            sessionStorage.setItem("sessionId", chatId);
         }
         return chatId;
     }
@@ -289,7 +289,7 @@
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                chatId: chatId,  // Attach chat ID for memory tracking
+                sessionId: chatId,  // Attach chat ID for memory tracking
                 message: message,
                 route: window.ChatWidgetConfig.webhook.route
             })
